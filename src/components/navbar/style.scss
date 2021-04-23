@@ -1,0 +1,30 @@
+#bar-title {
+  flex-grow: 1;
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+#login-button {
+  font-family: "Manrope";
+  letter-spacing: 0.9px;
+}
+#bar {
+  backdrop-filter: blur(8px);
+  > div {
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: var(--background);
+      opacity: 0.7;
+      left: 0;
+      top: 0;
+    }
+
+    > * {
+      position: relative
+    }
+  }
+}

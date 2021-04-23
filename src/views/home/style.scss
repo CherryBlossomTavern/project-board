@@ -1,9 +1,63 @@
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .txt {
-    text-align: center;
-  }
+@import "../../scss/mixins/breakpoints.scss";
+// .home {
+//   width: 100%;
+//   height: 100%;
+//   padding-top: 100px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+//   padding-bottom: 20px;
+//   .contentArea {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: none;
+//     gap: 10px;
+//     .card {
+//       padding: 10px;
+//       min-width: 275px;
+//       max-width: 350px;
+//       //height: 5000px;
+//       background-color: rgba($color: #fff, $alpha: 0.04);
+//       backdrop-filter: blur(3px);
+//       display: flex;
+//       flex-direction: column;
+//       flex-wrap: nowrap;
+//       gap: 5px;
+//       .title {
+//         white-space: pre-wrap;
+//         word-break: break-all;
+//         white-space: normal;
+//         margin-bottom: 1rem;
+//         font-family: "Manrope";
+//         font-weight: 600;
+//       }
+//       .innerCard {
+//         padding: 5px;
+//         width: 100%;
+//         min-height: 50px;
+//         background-color: rgba($color: #fff, $alpha: 0.04);
+//         > * {
+//           white-space: pre-wrap;
+//           word-break: break-all;
+//           white-space: normal;
+//           font-family: "Manrope";
+//           font-weight: 300;
+//         }
+//       }
+//     }
+//   }
+// }
+body::before {
+  content: "";
+    opacity: .3; 
+    z-index: -1;
+    position: fixed;
+    width: 100%; 
+    height: 100%;
+    background-image: url(../../assets/yua_fb.png);
+    background-size: 70vh;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    @include xs {
+      background-position: 0% 100%;
+    }
 }

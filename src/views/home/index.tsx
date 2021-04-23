@@ -1,38 +1,44 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import * as React from "react"
-import { IconButton } from "@material-ui/core"
-import { HighlightOutlined } from "@material-ui/icons"
-import {
-  MainProps,
-  render,
-  lightTheme,
-  darkTheme, 
-} from "../../index"
 import "./style.scss"
-
-export class Home extends React.Component<MainProps, { currTheme: string }> {
-  constructor(props: MainProps) {
-    super(props)
-    this.handleClick = this.handleClick.bind(this)
-  }
-  state: { currTheme: string } = {
-    currTheme: this.props.props.theme,
-  }
-  handleClick(): void {
-    if (this.state.currTheme === "dark") {
-      render(lightTheme)
-      this.setState({ currTheme: "light" })
-    } else {
-      render(darkTheme)
-      this.setState({ currTheme: "dark" })
-    }
-  }
-  render(): React.ReactNode {
-    return (
-      <div className="home">
-        <img className="react" src="dist/assets/react.png" width="300" height="300"/>
-        <h1 className="txt">React/Snowpack Boilerplate</h1>
-        <IconButton onClick={this.handleClick}><HighlightOutlined fontSize="default" /></IconButton>
-      </div>
-    )
-  }
+import { Board } from "components/board"
+export const Home: React.FC = () => {
+  return (
+    <div className="home">
+      <Board />
+    </div>
+  )
 }
+// export const Home: React.FC = () => {
+//   function temp(): void {
+//     //
+//   }
+
+//   return (
+//     <div className="home">
+//       <DragDropContext onDragEnd={temp}>
+//         <div className="contentArea">
+//           <Droppable droppableId="categories">
+//             {(provided): JSX.Element => (
+//               <div className="card" {...provided.droppableProps} ref={provided.innerRef}>
+//                 <Typography className="title">Test Category Yis Yis</Typography>
+//                 {tempItems.map(({ id, text }, index) => {
+//                   return (
+//                     <Draggable key={id} draggableId={id} index={index}>
+//                       {(provided): JSX.Element => (
+//                         <div className="innerCard" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+//                           <p>{text}</p>
+//                         </div>
+//                       )}
+//                     </Draggable>
+//                   )
+//                 })}
+//                 {provided.placeholder}
+//               </div>
+//             )}
+//           </Droppable>
+//         </div>
+//       </DragDropContext>
+//     </div>
+//   )
+// }

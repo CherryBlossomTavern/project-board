@@ -1,12 +1,24 @@
 import * as React from "react"
-import { MainProps } from "./index"
 import { Router } from "router"
+import { Navbar } from "components/navbar"
 
 // Global stylesheet
 import "scss/global.scss"
 
-export const App: React.FC<MainProps> = (props: MainProps) => (
-  <div>
-    <Router props={props.props} />
-  </div>
-)
+interface Props {
+  theme: string
+}
+
+export class App extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
+  render(): JSX.Element {
+    return (
+      <div>
+        <Navbar theme={this.props.theme} />
+        <Router/>
+      </div>
+    )
+  }
+}

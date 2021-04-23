@@ -41,6 +41,6 @@ module.exports = {
     "assets": "./src/assets",
     "views": "./src/views",
     "scripts": "./src/scripts",
-    "scss": "./src/scss"
+    "scss": "./src/scss",
   },
 }

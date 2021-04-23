@@ -6,16 +6,14 @@ import {
   Switch,
 } from "react-router-dom"
 
-import { MainProps } from "../index"
-
 import { Home } from "views/home"
 import { FourOFour } from "views/404"
 
-export const Router: React.FC<MainProps> = (props: MainProps) => (
+export const Router: React.FC = () => (
   <MRouter>
     <Switch>
       <Route exact path="/">
-        <Home props={props.props} />
+        <Home/>
       </Route>
       <Route path="*" component={FourOFour} />
     </Switch>
